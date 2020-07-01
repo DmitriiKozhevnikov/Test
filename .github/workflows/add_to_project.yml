@@ -1,0 +1,16 @@
+name: Add to project
+
+on:
+  issues:
+    types:
+      - opened
+
+add_to_techdebt:
+    runs-on: ubuntu-latest
+    steps:    
+    - if: (contains(github.event.issue.labels.*.name, 'Полоса: Техдолг')) 
+      uses: alex-page/github-project-automation-plus@v0.2.2
+      with:
+        project: Test
+        column: To do
+        repo-token: ${{ secrets.GH_TOKEN }}
