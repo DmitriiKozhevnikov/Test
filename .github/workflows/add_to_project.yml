@@ -6,11 +6,13 @@ on:
       - opened
 
 add_to_techdebt:
+    env:
+      techdebt_label: 'Полоса: Техдолг'
     runs-on: ubuntu-latest
     steps:    
-    - if: (contains(github.event.issue.labels.*.name, "Полоса: Техдолг")) 
+    - if: (contains(github.event.issue.labels.*.name, techdebt_label)) 
       uses: alex-page/github-project-automation-plus@v0.2.2
       with:
         project: Test
         column: To do
-        repo-token: ${{ secrets.GH_TOKEN }}
+        repo-token: github.token
