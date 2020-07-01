@@ -5,10 +5,11 @@ on:
     types:
       - opened
         
+env:
+  techdebt_label: 'Полоса: Техдолг'
+      
 jobs:
-  add_to_techdebt:
-      env:
-        techdebt_label: 'Полоса: Техдолг'
+  add_to_techdebt:      
       runs-on: ubuntu-latest
       steps:    
       - if: (contains(github.event.issue.labels.*.name, techdebt_label)) 
