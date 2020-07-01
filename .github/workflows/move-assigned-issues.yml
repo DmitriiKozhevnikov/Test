@@ -13,4 +13,4 @@ jobs:
         with:
           project: Test
           column: In progress
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GH_TOKEN }}
