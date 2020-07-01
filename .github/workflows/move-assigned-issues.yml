@@ -1,0 +1,16 @@
+name: Move assigned issue
+
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  move-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.event.issue.state == 'open'
+        uses: alex-page/github-project-automation-plus@v0.2.2
+        with:
+          project: Test
+          column: In progress
+          repo-token: ${{ GITHUB_TOKEN }}
