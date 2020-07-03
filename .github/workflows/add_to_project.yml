@@ -18,4 +18,4 @@ jobs:
         with:
           project: Test
           column: To do
-          repo-token: ${{ github.token }}
+          repo-token: ${{ secrets.GH_TOKEN }}
